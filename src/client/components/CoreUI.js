@@ -17,6 +17,7 @@ import { AppsPane } from './AppsPane'
 import { MenuMain } from './MenuMain'
 import { MenuApp } from './MenuApp'
 import { KeyboardIcon, MenuIcon, MicIcon, MicOffIcon, VRIcon } from './Icons'
+import { Wallet } from './Wallet'
 
 export function CoreUI({ world }) {
   const [ref, width, height] = useElemSize()
@@ -116,6 +117,7 @@ function Content({ world, width, height }) {
       {apps && <AppsPane world={world} close={() => world.ui.toggleApps()} />}
       {!ready && <LoadingOverlay />}
       {kicked && <KickedOverlay code={kicked} />}
+      {ready && <Wallet world={world} />}
     </div>
   )
 }
